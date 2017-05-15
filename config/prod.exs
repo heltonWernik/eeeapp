@@ -17,7 +17,6 @@ config :eeeapp, Eeeapp.Web.Endpoint,
   on_init: {Eeeapp.Web.Endpoint, :load_from_system_env, []},
   url: [host: "eeeapp.herokuapp.com", port: 80],
   cache_static_manifest: "priv/static/cache_manifest.json"
-  secret_key_base: System.get_env("SECRET_KEY_BASE")
 
 config :eeeapp, Eeeapp.Repo,
   adapter: Ecto.Adapters.Postgres,
