@@ -1,0 +1,11 @@
+language: elixir
+elixir:
+- 1.4.2
+otp_release: -19.0
+deploy:
+  provider: heroku
+  api_key:
+    secure: I0Zf5G75hX3Xe2EkB92bvFduOYdoM9uhu+vzkgGxR4IZnwQhvfcB1h7jknc+LpzrIKz22Meqz5s4a1h2LPVXawsysaKjp+yLFhCGPEl/+5Q1R+7SSvkJmhmEmroAIfNh2iYnCgzUC8O55jA0y/M0NdEQ+oa8FDmVeniZJucJc0TmsrT92Lh7C9qLCzyAdKmAhQBCpN6wheTt73ujeSrKQ0wibg8r/KEoX9iVjWQe0AipDwIbhL1zktqqYT34Q4qinbnPmkhJZLappD+Lx5meDdpFfMqvOMAvyIMy/eMNbCAUV3YgOcU135FTRreStjgSsaIxrnCUNenmbup8Hnv7J9ErccqQc1sBKlH8iXaYmdGZ96SUhjWxOsYhonNpauEwLF47qzzK0LIIZELINr+Qc1HJ3qnWgvPecSI9F6Qy750XwwZbNpdWdAaPzNlLOncIS56b74h46Y+vRejx7Xgrec4Ts2NZT2XvJWqzjx0WTBxWzvvGGqrZQcVG++118G3kaJhlPUPCKg74v9qKLbltUQNLhrKypsmGAudQ+4YWnoATRtHc2WFBg4eumv1hOXT6RUCz2AITsBsqg36q5wrRUvEpHCLeJ3Abq08gfZdiogs/lgex+ZcSJwsMNYyZDhxPbp5fN+mQetbUTdoWrK2Cjx11Rkez0g1FhdtWLOLaYfs=
+  app: eeeapp
+  on:
+    repo: heltonWernik/eeeapp

@@ -104,7 +104,7 @@ defmodule Eeeapp.Accounts do
 
   defp player_changeset(%Player{} = player, attrs) do
     player
-    |> cast(attrs, [:username, :score])
-    |> validate_required([:username, :score])
+    |> cast(attrs, [:display_name, :username, :score])
+    |> validate_required([:username])
   end
 end
