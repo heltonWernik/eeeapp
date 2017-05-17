@@ -7,6 +7,7 @@ defmodule Eeeapp.Web.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug Eeeapp.Web.PlayerAuthController, repo: Eeeapp.Repo
   end
 
   pipeline :api do
@@ -14,10 +15,16 @@ defmodule Eeeapp.Web.Router do
   end
 
   scope "/", Eeeapp.Web do
-    pipe_through :browser # Use the default browser stack
+    pipe_through :browser
 
-    get "/", PageController, :index
+    get "/", PlayerController, :new
+    get "/elm", PageController, :index
     resources "/players", PlayerController
+    resources "/sessions", PlayerSessionController, only: [:new, :create, :delete]
+
+    # Use the default browser stack
+    # get "/", PageController, :index
+    # resources "/players", PlayerController
   end
 
   # Other scopes may use custom stacks.
