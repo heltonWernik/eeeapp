@@ -38,17 +38,15 @@ exports.config = {
   // Phoenix paths configuration
   paths: {
     // Dependencies and current project directories to watch
-    watched: ["static", "css", "js", "vendor"],
+    watched: ["../lib/eeeapp/web/elm", "static", "css", "js", "vendor"],
     // Where to compile files to
     public: "../priv/static"
   },
 
   // Configure your plugins
   plugins: {
-    babel: {
-      // Do not use ES6 compiler in vendor code
-      ignore: [/vendor/]
-    }
+    babel: {ignore: [/vendor/] },
+    elmBrunch: { elmFolder: "../lib/eeeapp/web/elm", mainModules: ["Main.elm"], outputFolder: "../../../../assets/vendor" }
   },
 
   modules: {
