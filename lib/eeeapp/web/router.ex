@@ -19,6 +19,7 @@ defmodule Eeeapp.Web.Router do
 
     get "/", PlayerController, :new
     get "/elm", PageController, :index
+    get "/elm/game", PageController, :game
     resources "/players", PlayerController
     resources "/sessions", PlayerSessionController, only: [:new, :create, :delete]
 

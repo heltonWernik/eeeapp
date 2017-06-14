@@ -1,0 +1,24 @@
+var _user$project$Game$view = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html$text('Elm Game Base'),
+			_1: {ctor: '[]'}
+		});
+};
+var _user$project$Game$subscriptions = function (model) {
+	return _elm_lang$core$Platform_Sub$none;
+};
+var _user$project$Game$update = F2(
+	function (msg, model) {
+		var _p0 = msg;
+		return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
+	});
+var _user$project$Game$initialModel = {};
+var _user$project$Game$init = {ctor: '_Tuple2', _0: _user$project$Game$initialModel, _1: _elm_lang$core$Platform_Cmd$none};
+var _user$project$Game$main = _elm_lang$html$Html$program(
+	{init: _user$project$Game$init, view: _user$project$Game$view, update: _user$project$Game$update, subscriptions: _user$project$Game$subscriptions})();
+var _user$project$Game$Model = {};
+var _user$project$Game$NoOp = {ctor: 'NoOp'};

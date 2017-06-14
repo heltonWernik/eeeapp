@@ -7,6 +7,10 @@ defmodule Eeeapp.Web.PageController do
     render conn, "index.html"
   end
 
+def game(conn, _params) do
+    render conn, "game.html"
+  end
+
   defp authenticate(conn, _opts) do
     if conn.assigns.current_user() do
     conn

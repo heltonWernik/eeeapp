@@ -46,7 +46,7 @@ exports.config = {
   // Configure your plugins
   plugins: {
     babel: {ignore: [/vendor/] },
-    elmBrunch: { elmFolder: "../lib/eeeapp/web/elm", mainModules: ["Main.elm"], outputFolder: "../../../../assets/vendor" }
+    elmBrunch: { elmFolder: "../lib/eeeapp/web/elm", mainModules: ["Main.elm","Game.elm"], outputFolder: "../../../../assets/vendor" }
   },
 
   modules: {
