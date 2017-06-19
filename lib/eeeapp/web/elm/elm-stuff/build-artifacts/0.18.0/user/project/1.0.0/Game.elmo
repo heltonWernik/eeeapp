@@ -1,10 +1,172 @@
+var _user$project$Game$viewItem = function (model) {
+	return A2(
+		_elm_lang$svg$Svg$image,
+		{
+			ctor: '::',
+			_0: _elm_lang$svg$Svg_Attributes$xlinkHref('/images/coin.svg'),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$svg$Svg_Attributes$x(
+					_elm_lang$core$Basics$toString(model.itemPositionX)),
+				_1: {
+					ctor: '::',
+					_0: _elm_lang$svg$Svg_Attributes$y(
+						_elm_lang$core$Basics$toString(model.itemPositionY)),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$svg$Svg_Attributes$width('20'),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$svg$Svg_Attributes$height('20'),
+							_1: {ctor: '[]'}
+						}
+					}
+				}
+			}
+		},
+		{ctor: '[]'});
+};
+var _user$project$Game$viewCharacter = function (model) {
+	return A2(
+		_elm_lang$svg$Svg$image,
+		{
+			ctor: '::',
+			_0: _elm_lang$svg$Svg_Attributes$xlinkHref('/images/character.gif'),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$svg$Svg_Attributes$x(
+					_elm_lang$core$Basics$toString(model.characterPositionX)),
+				_1: {
+					ctor: '::',
+					_0: _elm_lang$svg$Svg_Attributes$y(
+						_elm_lang$core$Basics$toString(model.characterPositionY)),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$svg$Svg_Attributes$width('50'),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$svg$Svg_Attributes$height('50'),
+							_1: {ctor: '[]'}
+						}
+					}
+				}
+			}
+		},
+		{ctor: '[]'});
+};
+var _user$project$Game$viewGameGround = A2(
+	_elm_lang$svg$Svg$rect,
+	{
+		ctor: '::',
+		_0: _elm_lang$svg$Svg_Attributes$x('0'),
+		_1: {
+			ctor: '::',
+			_0: _elm_lang$svg$Svg_Attributes$y('300'),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$svg$Svg_Attributes$width('600'),
+				_1: {
+					ctor: '::',
+					_0: _elm_lang$svg$Svg_Attributes$height('100'),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$svg$Svg_Attributes$fill('green'),
+						_1: {ctor: '[]'}
+					}
+				}
+			}
+		}
+	},
+	{ctor: '[]'});
+var _user$project$Game$viewGameSky = A2(
+	_elm_lang$svg$Svg$rect,
+	{
+		ctor: '::',
+		_0: _elm_lang$svg$Svg_Attributes$x('0'),
+		_1: {
+			ctor: '::',
+			_0: _elm_lang$svg$Svg_Attributes$y('0'),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$svg$Svg_Attributes$width('600'),
+				_1: {
+					ctor: '::',
+					_0: _elm_lang$svg$Svg_Attributes$height('300'),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$svg$Svg_Attributes$fill('#4b7cfb'),
+						_1: {ctor: '[]'}
+					}
+				}
+			}
+		}
+	},
+	{ctor: '[]'});
+var _user$project$Game$viewGameWindow = A2(
+	_elm_lang$svg$Svg$rect,
+	{
+		ctor: '::',
+		_0: _elm_lang$svg$Svg_Attributes$width('600'),
+		_1: {
+			ctor: '::',
+			_0: _elm_lang$svg$Svg_Attributes$height('400'),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$svg$Svg_Attributes$fill('none'),
+				_1: {
+					ctor: '::',
+					_0: _elm_lang$svg$Svg_Attributes$stroke('black'),
+					_1: {ctor: '[]'}
+				}
+			}
+		}
+	},
+	{ctor: '[]'});
+var _user$project$Game$viewGame = function (model) {
+	return A2(
+		_elm_lang$svg$Svg$svg,
+		{
+			ctor: '::',
+			_0: _elm_lang$svg$Svg_Attributes$version('1.1'),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$svg$Svg_Attributes$width('600'),
+				_1: {
+					ctor: '::',
+					_0: _elm_lang$svg$Svg_Attributes$height('400'),
+					_1: {ctor: '[]'}
+				}
+			}
+		},
+		{
+			ctor: '::',
+			_0: _user$project$Game$viewGameWindow,
+			_1: {
+				ctor: '::',
+				_0: _user$project$Game$viewGameSky,
+				_1: {
+					ctor: '::',
+					_0: _user$project$Game$viewGameGround,
+					_1: {
+						ctor: '::',
+						_0: _user$project$Game$viewCharacter(model),
+						_1: {
+							ctor: '::',
+							_0: _user$project$Game$viewItem(model),
+							_1: {ctor: '[]'}
+						}
+					}
+				}
+			}
+		});
+};
 var _user$project$Game$view = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
 		{ctor: '[]'},
 		{
 			ctor: '::',
-			_0: _elm_lang$html$Html$text('Elm Game Base'),
+			_0: _user$project$Game$viewGame(model),
 			_1: {ctor: '[]'}
 		});
 };
@@ -16,9 +178,12 @@ var _user$project$Game$update = F2(
 		var _p0 = msg;
 		return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
 	});
-var _user$project$Game$initialModel = {};
+var _user$project$Game$initialModel = {characterPositionX: 50, characterPositionY: 300, itemPositionX: 500, itemPositionY: 300};
 var _user$project$Game$init = {ctor: '_Tuple2', _0: _user$project$Game$initialModel, _1: _elm_lang$core$Platform_Cmd$none};
 var _user$project$Game$main = _elm_lang$html$Html$program(
 	{init: _user$project$Game$init, view: _user$project$Game$view, update: _user$project$Game$update, subscriptions: _user$project$Game$subscriptions})();
-var _user$project$Game$Model = {};
+var _user$project$Game$Model = F4(
+	function (a, b, c, d) {
+		return {characterPositionX: a, characterPositionY: b, itemPositionX: c, itemPositionY: d};
+	});
 var _user$project$Game$NoOp = {ctor: 'NoOp'};
